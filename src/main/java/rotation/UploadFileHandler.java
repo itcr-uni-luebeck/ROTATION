@@ -23,13 +23,13 @@ import static spark.Spark.halt;
 /**
  * Class to process uploaded {@link ConceptMap}
  * 
- * @author Sebastian Germer
+ * @author Sebastian Germer, Hannes Ulrich
  */
 public class UploadFileHandler {
 	private ConceptMap conceptMap;
 
 	public UploadFileHandler(Request req) throws IOException, ServletException, DataFormatException {
-		FhirContext context = FhirContext.forR4();
+		FhirContext context = Configs.getFHIRContext();
 		IParser parser = context.newJsonParser();
 		String result;
 		if (req.contentType().contains("multipart/form-data")) {

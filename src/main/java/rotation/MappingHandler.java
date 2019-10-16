@@ -41,6 +41,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import ca.uhn.fhir.context.FhirContext;
+import ca.uhn.fhir.model.api.IResource;
 import ca.uhn.fhir.parser.IParser;
 import spark.Request;
 import spark.Response;
@@ -74,7 +75,8 @@ public class MappingHandler {
 	 */
 	public MappingHandler(String mappingString, ConceptMap cm, LoginHandler lHandler, Request req) {
 		Gson gson = new Gson();
-		Type mappingType = new TypeToken<HashMap<String, String>>() {}.getType();
+		Type mappingType = new TypeToken<HashMap<String, String>>() {
+		}.getType();
 		HashMap<String, String> mapping = gson.fromJson(mappingString, mappingType);
 		setMappingMap(mapping);
 		generateStructureMap(cm);
@@ -220,8 +222,8 @@ public class MappingHandler {
 	 * 
 	 * @return The parsed {@link String}
 	 */
-	public String SMapToString() {
-		FhirContext context = FhirContext.forR4();
+	public String sMapToString() {
+		FhirContext context = Configs.getFHIRContext();
 		IParser parser = context.newJsonParser();
 		return parser.encodeResourceToString(getsMap());
 	}
@@ -231,9 +233,8 @@ public class MappingHandler {
 	 * 
 	 * @return The parsed {@link String}
 	 */
-	public String BundleToString() {
-		FhirContext context = FhirContext.forR4();
-		IParser parser = context.newJsonParser();
+	public String bundleToString() {
+		IParser parser = Configs.getFHIRContext().newJsonParser();
 		return parser.encodeResourceToString(getResourceBundle());
 	}
 
@@ -242,12 +243,18 @@ public class MappingHandler {
 	 * 
 	 * @return The parsed {@link String}
 	 */
-	public String CMapToString() {
-		FhirContext context = FhirContext.forR4();
+	public String cMapToString() {
+		FhirContext context = Configs.getFHIRContext();
 		IParser parser = context.newJsonParser();
 		return parser.encodeResourceToString(getUpdatedCMap());
 	}
 
+	public String resourceToString(IResource res) {
+		FhirContext context = Configs.getFHIRContext();
+		IParser parser = context.newJsonParser();
+		return parser.encodeResourceToString(getUpdatedCMap());
+	}
+	
 	/**
 	 * Setter for the {@link StructureMap}
 	 * 
@@ -294,7 +301,7 @@ public class MappingHandler {
 	 */
 	public HttpServletResponse createLocalFile(Response res) {
 
-		byte[] outputBytes = this.BundleToString().getBytes();
+		byte[] outputBytes = this.bundleToString().getBytes();
 		try {
 			ServletOutputStream outputStream = res.raw().getOutputStream();
 			outputStream.write(outputBytes);
@@ -332,5 +339,4 @@ public class MappingHandler {
 	private void setResourceBundle(Bundle resourceBundle) {
 		this.resourceBundle = resourceBundle;
 	}
-
 }

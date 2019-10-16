@@ -2,29 +2,24 @@ package rotation;
 
 import static com.mongodb.client.model.Filters.eq;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.function.Consumer;
-
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoDatabase;
 
 import org.bson.BsonDocument;
 import org.bson.BsonDouble;
 import org.bson.Document;
 import org.hl7.fhir.r4.model.ConceptMap;
 import org.hl7.fhir.r4.model.ConceptMap.TargetElementComponent;
-import org.hl7.fhir.r4.model.UriType;
+
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoDatabase;
 
 /**
  * SuggestionHandler
+ * 
+ * @author Sebastian Germer, Hannes Ulrich
  */
 public class SuggestionHandler {
 
@@ -66,13 +61,11 @@ public class SuggestionHandler {
 			targetUrns.add(t.getCode());
 		}
 		FindIterable<Document> selection = database.getCollection("Rules").find(eq("Rule.source.context", sourceUrn));// .forEach(printBlock);
+		
 		for (String t : targetUrns) {
 			selection.filter(eq("Rule.target.context", t));
-			// selection.filter(get("Rules.source.target"))
-
 		}
-		// Projections.elemMatch(fieldName)
-		// System.out.println(selection.first().toJson());
+		
 		BsonDocument rules = selection.first() != null ? (BsonDocument.parse(selection.first().toJson())) : null;
 		if (rules != null) {
 			return rules.getDocument("Rule").getArray("target").get(0).asDocument().getArray("parameter").get(0)
@@ -130,57 +123,5 @@ public class SuggestionHandler {
 				return "nosuggestion";
 			}
 		}
-	}
-
-	/**
-	 * Method to retrieve the designation from an element. Doesn't work with
-	 * protected MDRs, so currently not in use.
-	 */
-	@SuppressWarnings("unused")
-	private String getDesignation() {
-		UriType sourceUri = cm.getSourceUriType();
-		URL url;
-		try {
-			url = new URL(sourceUri.getValue() + "/dataelements/"
-					+ cm.getGroup().get(group).getElement().get(elem).getCode());
-			String source = getContent(url);
-			System.out.println(source);
-
-			BsonDocument sourceJson = BsonDocument.parse(source);
-			String sourcedis = sourceJson.getArray("designations").get(0).asDocument().get("designation").asString()
-					.getValue();
-			System.out.println(sourcedis);
-			return sourcedis;
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			return "";
-		}
-
-	}
-
-	/**
-	 * Method to get a url resource.
-	 * 
-	 * @param url
-	 *            The requested url
-	 * @return Content of this url resource
-	 */
-	private String getContent(URL url) {
-
-		StringBuilder sb = new StringBuilder();
-		BufferedReader in;
-		try {
-			URLConnection yc = url.openConnection();
-			yc.connect();
-			in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
-			String inputLine;
-			while ((inputLine = in.readLine()) != null)
-				sb.append(inputLine);
-			in.close();
-		} catch (IOException e) {
-			sb.append("");
-		}
-
-		return sb.toString();
 	}
 }

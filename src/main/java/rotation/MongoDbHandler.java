@@ -15,7 +15,7 @@ import org.hl7.fhir.utilities.xml.SchematronWriter.Rule;
 /**
  * Class to upload Elements to MongoDB instance
  * 
- * @author Sebastian Germer, Hannes Ulrich
+ * @author Sebastian Germer
  */
 public class MongoDbHandler {
 	private MappingHandler map;
@@ -43,7 +43,7 @@ public class MongoDbHandler {
 	 */
 	public void uploadStructureMap() {
 		MongoCollection<Document> collection = db.getCollection("StructureMaps");
-		BsonDocument bson = BsonDocument.parse(map.SMapToString());
+		BsonDocument bson = BsonDocument.parse(map.sMapToString());
 		Document doc = new Document("StructureMap", bson);
 		collection.insertOne(doc);
 		collection = db.getCollection("Rules");
@@ -91,7 +91,7 @@ public class MongoDbHandler {
 	 */
 	public void uploadConceptMap() {
 		MongoCollection<Document> collection = db.getCollection("ConceptMaps");
-		BsonDocument bson = BsonDocument.parse(map.CMapToString());
+		BsonDocument bson = BsonDocument.parse(map.cMapToString());
 		Document doc = new Document("ConceptMap", bson);
 		collection.insertOne(doc);
 	}

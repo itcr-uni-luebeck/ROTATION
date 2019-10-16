@@ -102,10 +102,10 @@ public class Server {
 		post("/parseToStructureMap", (req, res) -> {
 			MappingHandler mapHandler = new MappingHandler(req.body(),
 					((UploadFileHandler) req.session().attribute("ConceptMap")).getConceptMap(), lHandler, req);
-			req.session().attribute("UpdatedConceptMap", mapHandler.CMapToString());
+			req.session().attribute("UpdatedConceptMap", mapHandler.cMapToString());
 			req.session().attribute("StructureMap", mapHandler);
 			res.type("application/json");
-			return mapHandler.BundleToString();
+			return mapHandler.bundleToString();
 
 		});
 

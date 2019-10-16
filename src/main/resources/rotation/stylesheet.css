@@ -1,0 +1,71 @@
+
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+.left, .right {
+  width: 30%;
+}
+
+.middle {
+  width: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+#editor {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  border-radius: 4px;
+
+}
+
+/* #EditorButton{
+	margin-left: 25%;
+} */
+.dot {
+  /* background: yellow;
+  border-radius: 50%;
+  display: inline-grid;
+  height: 16px; */
+  margin: 3px;
+  /*width: 3px;*/
+}
+.activatedDot {
+  filter: brightness(50%)
+}
+.saved{
+  /*background: lightgreen;*/
+}
+.activatedSaved{
+  filter: brightness(50%)
+  
+}
+.dismissed {
+  /*background: lightgrey;*/
+}
+.activatedDismissed {
+  filter: brightness(50%)
+}
+.space {
+  background: inherit;
+  width: 15px;
+  height: 16px;
+  display: inline-grid;
+}

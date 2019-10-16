@@ -1,0 +1,155 @@
+{
+        "resourceType" : "ConceptMap",
+        "url" : "http://http://141.83.21.75results/420e16bc-a0e8-43e8-9017-f1d8af1ab125",
+        "identifier" : {
+                "system" : "urn:ietf:rfc:3986",
+                "value" : "urn:uuid:420e16bc-a0e8-43e8-9017-f1d8af1ab125"
+        },
+        "name" : "Mapping from https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr9 to https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr20",
+        "title" : "https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr9_to_https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr20",
+        "status" : "active",
+        "experimental" : true,
+        "date" : "2018-08-09T17:08:16+02:00",
+        "publisher" : "Test",
+        "description" : "#ConceptMap matching two Samply.MDR Namespaces%nThis ConceptMap matches DataElements from the namespace*https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr9* to DataElements from *https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr20*.%nThis Matching was generated with the MDRCupid Software on 2018-08-09T17:08:16.740+02:00[Europe/Berlin] and  manually validated by an user.##Matching Algorithm Configuration```json{\n  \"weights\": {\n    \"DESIGNATION_DEFINITION\": 0.002102439,\n    \"DESIGNATION_DESIGNATION\": 0.001773933\n  },\n  \"matchingAlgorithms\": {\n    \"VALIDATION_VALIDATIONDATA\": {\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#5\": 0.5013929,\n      \"stringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator\": 0.09105306,\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.3250051,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.0825489\n    },\n    \"VALIDATION_VALIDATIONDOMAINTYPE\": {\n      \"stringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator\": 0.5,\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#5\": 0.3333334,\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.1666666\n    },\n    \"VALIDATION_MAXCHARQUANT\": {\n      \"stringMatchingAlgorithms.IntegerComparator\": 1.0\n    },\n    \"VALIDATION_DATATYPE\": {\n      \"stringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator\": 0.1951277,\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#5\": 0.4401705,\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2717662,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.09293564\n    },\n    \"VALIDATION_FORMAT\": {\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#5\": 0.4345045,\n      \"stringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator\": 0.2213932,\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2653847,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.07871757\n    },\n    \"VALIDATION_VALIDATIONTYPE\": {\n      \"stringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator\": 0.4964917,\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#5\": 0.3352044,\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.1683039\n    },\n    \"DESIGNATION_DEFINITION\": {\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2329764,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.2456109,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator#10\": 0.1702355,\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#7\": 0.200245,\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator\": 0.1509322\n    },\n    \"VALIDATION_DESCRIPTION\": {\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#5\": 0.4940809,\n      \"stringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator\": 0.09629802,\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.3199803,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.08964078\n    },\n    \"DESIGNATION_DESIGNATION\": {\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2679509,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.1255744,\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator#7\": 0.2030609,\n      \"stringMatchingAlgorithms.CosineSimilarityCalculator\": 0.1419457,\n      \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.JaccardSimilarityCalculator#5\": 0.1378221,\n      \"stringMatchingAlgorithms.JaccardSimilarityCalculator#10\": 0.123646\n    }\n  },\n  \"groupLabelDefinitionMatchingPipes\": {\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator#10\": 0.1702355,\n    \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2329764,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator#7\": 0.200245,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator\": 0.1509322,\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.2456109\n  },\n  \"groupLabelDesignationMatchingPipes\": {\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.JaccardSimilarityCalculator#5\": 0.1378221,\n    \"stringMatchingAlgorithms.JaccardSimilarityCalculator#10\": 0.123646,\n    \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2679509,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator\": 0.1419457,\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.1255744,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator#7\": 0.2030609\n  },\n  \"structureWeight\": 0.1531112,\n  \"structureLabelDefinitionWeight\": 1.0,\n  \"structureLabelDesignationWeight\": 1.0,\n  \"structureDepth\": 2,\n  \"optionsMeaningDefinitionMatchingPipes\": {\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator#10\": 0.1702355,\n    \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2329764,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator#7\": 0.200245,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator\": 0.1509322,\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.2456109\n  },\n  \"optionsMeaningDesignationMatchingPipes\": {\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.JaccardSimilarityCalculator#5\": 0.1378221,\n    \"stringMatchingAlgorithms.JaccardSimilarityCalculator#10\": 0.123646,\n    \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.2679509,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator\": 0.1419457,\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.1255744,\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator#7\": 0.2030609\n  },\n  \"optionsValueMatchingPipes\": {\n    \"stringMatchingAlgorithms.CosineSimilarityCalculator#5\": 0.5013929,\n    \"stringMatchingAlgorithms.NGramSimilarityFromDistanceCalculator\": 0.09105306,\n    \"stringMatchingAlgorithms.JaccardSimilarityCalculator#7\": 0.3250051,\n    \"stringPreprocessors.DELemmatizer-\\u003estringMatchingAlgorithms.SorensenDiceSimilarityCalculator#10\": 0.0825489\n  },\n  \"optionsWeight\": 0.1098798,\n  \"optionsValueWeight\": 1.0,\n  \"optionsMeaningDefinitionWeight\": 1.0,\n  \"optionsMeaningDesignationWeight\": 1.0,\n  \"bowWeight\": 0.7331326,\n  \"bowDepth\": 0,\n  \"vectorDistCalculator\": \"bagOfWords.CosineDistanceCalculator\"\n}```",
+        "sourceUri" : "https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr9",
+        "targetUri" : "https://mdr.itcr.uni-luebeck.de/v2/api/mdr#mdr20",
+        "group" : [
+                {
+                        "element" : [
+                                {
+                                        "code" : "urn:mdr9:dataelement:3:1",
+                                        "display" : "Proben ID",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:11:1",
+                                                        "display" : "Proben ID",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:47:1",
+                                        "display" : "ICD 10 Code",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:27:1",
+                                                        "display" : "Diagnose ICD-10",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:4:1",
+                                        "display" : "Geschlecht",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:23:1",
+                                                        "display" : "Geschlecht biologisch",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:2:1",
+                                        "display" : "Geburtsdatum",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:22:1",
+                                                        "display" : "Geburtsdatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:8:1",
+                                        "display" : "Entnahmedatum",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:12:1",
+                                                        "display" : "Entnahmedatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:5:1",
+                                        "display" : "Sterbedatum",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:24:1",
+                                                        "display" : "Todesdatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:70:1",
+                                        "display" : "Datum",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:26:1",
+                                                        "display" : "Diagnosedatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:34:1",
+                                        "display" : "OP Datum",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:12:1",
+                                                        "display" : "Entnahmedatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:33:1",
+                                        "display" : "Datum der diagnostischen Sicherung von Fernmetastasen.",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:26:1",
+                                                        "display" : "Diagnosedatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:31:1",
+                                        "display" : "Datum 1. Tumordiagnose",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:26:1",
+                                                        "display" : "Diagnosedatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:11:1",
+                                        "display" : "Probenart",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:20:1",
+                                                        "display" : "Proben Kontext",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "code" : "urn:mdr9:dataelement:32:1",
+                                        "display" : "Datum",
+                                        "target" : [
+                                                {
+                                                        "code" : "urn:mdr20:dataelement:26:1",
+                                                        "display" : "Diagnosedatum",
+                                                        "equivalence" : "relatedto"
+                                                }
+                                        ]
+                                }
+                        ]
+                }
+        ]
+}

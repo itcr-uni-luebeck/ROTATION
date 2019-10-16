@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<title>Transform Wizard</title>
+
+
+	
+</head>
+
+<body>
+	<!-- <h1 id="Header">Transform Wizard</h1> -->
+
+
+    <div class="dots center-align"></div>
+	
+	<div class="row container center-align">
+	<div class="column left" id="SourceDiv">
+		<div id="Source">Placeholder</div>
+		Datentyp: <br> <span id ="SourceInjector"></span><br>
+		Funktionsname: <input type="text" id="Functionname"><br>
+		Input: <input type="text" id="Functioninput"><br>
+		
+	</div>
+	<div class="column middle" id="Editor">
+
+
+	</div>
+	<div class="column right" id="TargetDiv">
+		<div id = "Target">Placeholder</div>
+		Datentyp: <span id="TargetInjector"></span><br>
+		Output:<br><input type="text" readonly id="Functionoutput" value=""></input>
+		
+	</div>
+	</div>
+	<div class="container center-align">
+	<button class="btn-small waves-effect waves-light" type="button" id ="EditorButton" onclick="goToElementBefore()">Zur&uuml;ck</button>
+	<button class="btn-small waves-effect waves-light" type="button" onclick="evaluateScript()">Evaluieren</button>
+	<button class="btn-small waves-effect waves-light" type="button" onclick="save()">Speichern</button>
+	<button class="btn-small waves-effect waves-light" type="button" onclick="dismiss()">Verwerfen</button>
+	<button class="btn-small waves-effect waves-light" type="button" onclick="showExample()">Beispieltext zeigen</button>
+	<button class="btn-small waves-effect waves-light" type="button" onclick="suggest()">Vorschlag</button>
+	<button class="btn-small waves-effect waves-light" type="button" onclick="goToElementAfter()">Weiter</button>
+	</div>
+	<br>
+	<div class="container right-align">
+	<button class="btn-small waves-effect waves-light" type="button" onclick="generateStructureMap()">StructureMap generieren</button><br>
+	</div>
+
+
+
+	<!-- <script src="taboverride.min.js"></script> -->
+	<!-- <script>
+		tabOverride.set(document.getElementsByTagName('textarea')).tabSize(4);
+	</script> -->
+
+
+</body>
+
+</html>

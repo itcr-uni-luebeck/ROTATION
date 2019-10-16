@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Transformation Wizard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.4/ace.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.3.1/stitch.js"></script> -->
+    <!-- Materialize Style -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./upload.js"></script>
+    <script src="samplyInjector/injector.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css" th:href="@{stylesheet.css}">
+    
+    
+</head>
+
+<body>
+<div class ="card-panel grey lighten-4">
+    <div style="text-align:right">
+    <span id = "Username"></span>
+    <a href="/logout" method="GET">Ausloggen</a>
+    </div>
+    <h1 id="Header" class="center-align">Transformation Wizard</h1>
+    <div id="StartUploadDiv" style="display: block" class="container center-align">
+    <h3>Upload via File</h3>
+    <form id="ConceptMapFile" name = "ConceptMapFile" action="/parseFile.html" method="POST" enctype="multipart/form-data">
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>Datei ausw&auml;hlen</span>
+              <input type="file" name="File" id="File" style="color: rgb(0, 0, 0)" accept=".json" required><br>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="SubmitFile">Hochladen</button> <button class="btn waves-effect waves-light" type="reset">Zur&uuml;cksetzen</button><br>
+    </form>
+    <span id = "errorUpload" style="color: red;font-weight: bold"></span>
+    <h3>Upload via REST</h3>
+    <form id="ConceptMapRest" method="POST" enctype="multipart/form-data">
+        <input type="url" id="RessourceUrl" placeholder="http://example.com" required><br>
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="SearchRessource">Adresse abfragen</button> <button class="btn waves-effect waves-light" type="reset">Zur&uuml;cksetzen</button><br>
+    </form>
+    </div>
+    <div id="UploadedFileDiv" style="display: none"class="container">
+    
+        <h3>Uploaded File:</h3><br>
+        <span id="UploadedFile"> </span><br>
+        <button class="btn waves-effect waves-light" type="button" onclick="showEditor()">Diese ConceptMap verwenden!</button>
+        <button class="btn waves-effect waves-light" type="button" onclick="backToUpload();">Zur&uuml;ck</button>
+
+    </div>
+    <div id ="EditorViewDiv" style="display:none">
+
+    </div>
+    <div id="StructureMapViewDiv" style="display:none" class="left-align row">
+        <div id = "StructureMapView" class="col s12"></div>
+        <button class="btn waves-effect waves-light" type="button" onclick="goBackToEditor()">Zur&uuml;ck</button>
+        <button class="btn waves-effect waves-light" type="button" onclick="uploadToDb()">StructureMap verwenden</button>
+        
+
+    </div>
+
+    <div id = "SaveDiv" style="display: none" class = "container">
+        <h3>Lokal speichern</h3>
+        <a class="btn waves-effect waves-light" href="./saveLocal" id="downloadButton" download><i class="material-icons">cloud_download</i></a><br>
+        <h3>Post via Rest</h3>
+        <form id="StructureMapUpload" method="POST" enctype="text/plain">
+        <input type="url" id = "PostURL" placeholder="http://example.com" required>
+        <button class="btn waves-effect waves-light" type="submit" placeholder="Upload">Post zu dieser Adresse</button>
+        </form><br>
+        <span id = "Response"></span>
+    </div>
+
+
+    <script src="./editorFunctions.js"></script>
+    <script src="./structureMapRequest.js"></script>
+</div>
+</body>
+<script>document.getElementById("Username").innerHTML = getCookie("Username");</script>
+
+</html>

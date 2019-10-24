@@ -173,7 +173,6 @@ public class MappingHandler {
 					new StructureMapGroupInputComponent().setMode(StructureMapInputMode.TARGET).setName("Target"));
 			ArrayList<SourceElementComponent> elementsToRemove = new ArrayList<SourceElementComponent>();
 			for (SourceElementComponent element : group.getElement()) {
-				System.out.println(this.mappingMap.get("Mapping(" + groupNumber + "," + elementNumber + ")"));
 				// if element was not dismissed, create new rule
 				if (!this.mappingMap.get("Mapping(" + groupNumber + "," + elementNumber + ")").equals("DISMISSED")) {
 					StructureMapGroupRuleComponent rule = new StructureMapGroupRuleComponent();
